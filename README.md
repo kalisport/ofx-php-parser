@@ -23,7 +23,7 @@ This project primarily revolves around the `OFX` class in the `Endeken\OFX` name
 
 require 'vendor/autoload.php';
 
-use Endeken\OFX;
+use Endeken\OFX\OFX;
 
 try {
     // Load the OFX data
