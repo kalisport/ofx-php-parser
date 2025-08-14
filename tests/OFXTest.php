@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Endeken\OFX\OFX;
+use Kalisport\OFX\OFX;
 
 class OFXTest extends TestCase
 {

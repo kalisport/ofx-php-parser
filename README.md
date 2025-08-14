@@ -1,11 +1,11 @@
 # OFX PHP Parser
 This project consists of a PHP parser for OFX (Open Financial Exchange) files, implemented using PHP 8.2. Our aim is to make the process of importing OFX files as straightforward and hassle-free as possible.
 
-[![Build Status](https://scrutinizer-ci.com/g/endeken-com/ofx-php-parser/badges/build.png?b=main)](https://scrutinizer-ci.com/g/endeken-com/ofx-php-parser/build-status/main)
-[![Latest Stable Version](https://img.shields.io/github/v/release/endeken-com/ofx-php-parser.svg)](https://packagist.org/packages/endeken/ofx-php-parser)
-[![Code Coverage](https://scrutinizer-ci.com/g/endeken-com/ofx-php-parser/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/endeken/ofx-php-parser/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/endeken-com/ofx-php-parser/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/endeken/ofx-php-parser/?branch=master)
-[![Downloads](https://img.shields.io/packagist/dt/endeken/ofx-php-parser.svg)](https://packagist.org/packages/endeken/ofx-php-parser)
+[![Build Status](https://scrutinizer-ci.com/g/kalisport-com/ofx-php-parser/badges/build.png?b=main)](https://scrutinizer-ci.com/g/kalisport-com/ofx-php-parser/build-status/main)
+[![Latest Stable Version](https://img.shields.io/github/v/release/kalisport-com/ofx-php-parser.svg)](https://packagist.org/packages/kalisport/ofx-php-parser)
+[![Code Coverage](https://scrutinizer-ci.com/g/kalisport-com/ofx-php-parser/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/kalisport/ofx-php-parser/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kalisport-com/ofx-php-parser/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/kalisport/ofx-php-parser/?branch=master)
+[![Downloads](https://img.shields.io/packagist/dt/kalisport/ofx-php-parser.svg)](https://packagist.org/packages/kalisport/ofx-php-parser)
 [![Downloads](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
 
@@ -13,17 +13,17 @@ This project consists of a PHP parser for OFX (Open Financial Exchange) files, i
 Simply require the package using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require endeken/ofx-php-parser
+$ composer require kalisport/ofx-php-parser
 ```
 
 ## Usage
-This project primarily revolves around the `OFX` class in the `Endeken\OFX` namespace. This class provides a static function `parse()` which is used to parse OFX data and return the parsed information. Here is a basic usage example:
+This project primarily revolves around the `OFX` class in the `Kalisport\OFX` namespace. This class provides a static function `parse()` which is used to parse OFX data and return the parsed information. Here is a basic usage example:
 ```php
 <?php
 
 require 'vendor/autoload.php';
 
-use Endeken\OFX\OFX;
+use Kalisport\OFX\OFX;
 
 try {
     // Load the OFX data
@@ -58,4 +58,6 @@ try {
 
 ## Acknowledgements
 
-This library is a standalone project, however it is heavily influenced by the work done in the [asgrim/ofxparser](https://github.com/asgrim/ofxparser) which itself is a fork of [grimfor/ofxparser](https://github.com/grimfor/ofxparser). We would like to acknowledge the contributions made by the developers of these projects. Our intent was not to simply fork the project, but to build upon their work while taking the library in a slightly different direction to better serve our purposes.
+This library is an independent project; however, it draws significant inspiration from the work done on [endeken-com/ofx-php-parser](https://github.com/endeken-com/ofx-php-parser), which is itself a fork of [asgrim/ofxparser](https://github.com/asgrim/ofxparser), originally derived from [grimfor/ofxparser](https://github.com/grimfor/ofxparser).
+
+We would like to express our appreciation to the developers of these projects for their valuable contributions. Our intention was not to create a direct fork, but rather to build upon their efforts and guide the library in a slightly different direction to better address our specific requirements.

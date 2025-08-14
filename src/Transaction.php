@@ -1,6 +1,6 @@
 <?php
 
-namespace Endeken\OFX;
+namespace Kalisport\OFX;
 
 use DateTime;
 

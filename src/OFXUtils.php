@@ -1,6 +1,6 @@
 <?php
 
-namespace Endeken\OFX;
+namespace Kalisport\OFX;
 
 use RuntimeException;
 use SimpleXMLElement;
@@ -12,13 +12,13 @@ class OFXUtils
         $ofxContent = str_replace(['\r\n'], '\n', $ofxContent);
 
         if (mb_check_encoding($ofxContent, 'UTF-8')) {
-            // Le contenu est déjà en UTF‑8: NE PAS reconvertir selon CHARSET
+            // The content is already in UTF‑8: DO NOT reconvert according to CHARSET
             $declaredEncoding = 'UTF-8';
         }
         
-        // Et au moment de convertir:
+        // And when converting :
         if ($declaredEncoding !== 'UTF-8') {
-            // Ne convertir que si le buffer n’est pas déjà UTF‑8 valide
+            // Convert only if the buffer is not already valid UTF‑8
             if (!mb_check_encoding($ofxContent, 'UTF-8')) {
                 $ofxContent = mb_convert_encoding($ofxContent, 'UTF-8', $declaredEncoding);
             }

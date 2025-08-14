@@ -1,6 +1,6 @@
 <?php
 
-namespace Endeken\OFX;
+namespace Kalisport\OFX;
 
 use DateTime;
 use DateTimeZone;
@@ -23,9 +23,7 @@ class OFX
      */
     public static function parse(string $ofxData): null|OFXData
     {
-
         // Check if SimpleXML object was created successfully
-
         $xml = OFXUtils::normalizeOfx($ofxData);
         if ($xml === false) {
             return null;
@@ -106,7 +104,6 @@ class OFX
             // Create a DateTime object with the appropriate timezone offset
             $dateTime = new DateTime($dateStringWithoutOffset, new DateTimeZone("GMT$offset"));
             $dateTime->setTimezone(new DateTimeZone($timezoneAbbreviation));
-
         } else {
             // Handle cases where the date format doesn't match expectations
             // You might want to log an error or throw an exception depending on your needs
