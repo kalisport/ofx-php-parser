@@ -55,8 +55,7 @@ class BankAccount
         DateTime $balanceDate,
         string $transactionUid,
         Statement $statement,
-    )
-    {
+    ) {
         $this->accountNumber = $accountNumber;
         $this->accountType = $accountType;
         $this->agencyNumber = $agencyNumber;

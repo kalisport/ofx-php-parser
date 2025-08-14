@@ -95,8 +95,7 @@ class Transaction
         string $memo,
         string $sic,
         string $checkNumber,
-    )
-    {
+    ) {
         $this->type = $type;
         $this->amount = $amount;
         $this->date = $date;
