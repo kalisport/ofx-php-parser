@@ -10,7 +10,20 @@ class OFXUtils
     public static function normalizeOfx(string $ofxContent): string|false|SimpleXMLElement
     {
         $ofxContent = str_replace(['\r\n'], '\n', $ofxContent);
-        $ofxContent = mb_convert_encoding($ofxContent, 'UTF-8', 'ISO-8859-1');
+
+        if (mb_check_encoding($ofxContent, 'UTF-8')) {
+            // Le contenu est déjà en UTF‑8: NE PAS reconvertir selon CHARSET
+            $declaredEncoding = 'UTF-8';
+        }
+        
+        // Et au moment de convertir:
+        if ($declaredEncoding !== 'UTF-8') {
+            // Ne convertir que si le buffer n’est pas déjà UTF‑8 valide
+            if (!mb_check_encoding($ofxContent, 'UTF-8')) {
+                $ofxContent = mb_convert_encoding($ofxContent, 'UTF-8', $declaredEncoding);
+            }
+        }
+        
         $sgmlStart = stripos($ofxContent, '<OFX>');
         $ofxHeader = trim(substr($ofxContent, 0, $sgmlStart));
         $header = self::parseHeader($ofxHeader);
